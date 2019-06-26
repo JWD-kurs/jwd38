@@ -109,62 +109,15 @@ wafepaApp.controller('MyController', function($scope) {
 </div>
 ```
 
-----
-
-### Rutiranje
-
-Rutiranje predstavlja menjanje stranica kroz interakciju sa aplikacijom (npr. klik na link). U SPA, menjanje stranica se ne događa fizički, jer je korisnik uvek na istoj stranici.
-U AngularJS, rutiranje je omogućeno kroz servis $routeProvider, koji se nalazi u modulu ngRoute. Ovaj modul se uključuje u aplikaciju sa angular-route.js (downloadovati ovaj modul sa AngularJS sajta).
-
-Prilikom rutiranja, odnosno logičkog menjanja stranica, korisnik se UVEK nalazi na istoj stranici (index.html), a sa servera se dobavljaju samo tzv. parcijalni view-ovi (*eng. partial view*),
-tj. delovi interfejsa koji su specifični za tu stranicu.
-
-* U static/app/html  ćemo smeštati parcijalne view-ove. Tu dodati dva fajla: home.html i activities.html.
-
-* Modul za rutiranje uključiti u HTML **posle angular.js, a pre main.js fajla**.
-
-```html
-<script src="/assets/js/angular-route.js"></script>
-```
-
-* U main.js dodati ngRoute modul u aplikaciju:
-
-```javascript
-var wafepaApp = angular.module('wafepaApp', ['ngRoute']);
-```
-
-* Konfigurisanje $routeProvider servisa se vrši pobrajanjem svih ruta - when('/ruta'), kao i koja stranica se prikazuje na odgovarajućoj ruti - templateUrl : 'page.html'.
-
-```javascript
-wafepaApp.config(['$routeProvider', function($routeProvider) {
-	$routeProvider
-		.when('/', {
-			templateUrl : '/app/html/home.html'
-		})
-		.when('/activities', {
-			templateUrl : '/app/html/activities.html'
-		})
-		.otherwise({
-			redirectTo: '/'
-		});
-}]);
-```
-
-* Stranica definisana unutar templateUrl parametra se prikazuje ununtar HTML elementa koji je označen sa ng-view direktivom:
-
-```html
-<div ng-view>
-
-</div>
-```
-
 ---
 
 ### Domaći zadaci
 
 * Pročitati (SPA and the Single Page Myth)[http://www.johnpapa.net/pageinspa/]
 * Pogledati postojeće angularjs direktive: [https://docs.angularjs.org/api/ng/directive]
-* Napraviti novu stranicu (nazovite je kako hoćete, koristićemo je samo za ovaj domaći)
+* Napraviti malu angularjs aplikaciju, po uzoru na aplikacije iz primera:
+  * Napraviti html stranicu i js datoteku; uvući angularjs i js datoteku u html
+  * Napraviti modul i kontroler; uvezati sa html-om pomoću direktiva
   * Dodati polje za unos teksta i dugme. Onemogućiti pritisak na dugme ukoliko je polje prazno, u suprotnom pritiskom na dugme obrisati sadržaj polja.
   * Dodati dva polja za unos teksta. Unos u prvo polje preslikava se u drugo polje, ali ne i obrnuto (ako se unese nešto u drugo polje, ne menja se prvo polje)
 * Odraditi zadatak dat u folderu "Dokumenti/Back-end zadatak". Rešenje ćemo koristiti na osmom terminu.

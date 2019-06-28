@@ -128,6 +128,7 @@ Za više informacija o $routeParams servisu pogledati AngularJS dokumentaciju [h
 ### Domaći zadaci
 
 * Pročitati o Promise objektu: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise]
+* Pročitati o $window i $log servisima
 * Pročitati o angularjs filterima: [https://www.w3schools.com/angular/angular_filters.asp]
 * Uraditi za korisnike sve što je urađeno na času za aktivnosti
 * Na stranici za dodavanje aktivnosti, onemogućiti klik na dugme "Save" ukoliko je polje za ime aktivnosti prazno.

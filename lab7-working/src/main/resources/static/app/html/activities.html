@@ -1,0 +1,16 @@
+<div ng-controller="ActivitiesCtrl">
+	<h1>Activities</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="a in activities">
+				<td>{{a.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -25,7 +25,7 @@ tj. delovi interfejsa koji su specifični za tu stranicu.
 var wafepaApp = angular.module('wafepaApp', ['ngRoute']);
 ```
 
-* Konfigurisanje $routeProvider servisa se vrši pobrajanjem svih ruta - when('/ruta'), kao i koja stranica se prikazuje na odgovarajućoj ruti - templateUrl : 'page.html'.
+* Konfigurisanje $routeProvider servisa se vrši pobrajanjem svih ruta - when('/ruta'), kao i koja stranica se prikazuje na odgovarajućoj ruti - templateUrl : 'page.html'. Kako bi vam sintaksa bila upotpunosti jasna, pogledajte link o dependancy injection mehanizmu u Angularjs-u: [https://docs.angularjs.org/guide/di#dependency-annotation](https://docs.angularjs.org/guide/di#dependency-annotation)
 
 ```javascript
 wafepaApp.config(['$routeProvider', function($routeProvider) {

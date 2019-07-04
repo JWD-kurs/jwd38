@@ -1,0 +1,38 @@
+<div ng-controller="EditRecordCtrl">
+	<form>
+		<div class="form-group">
+			<label>Time</label>
+			<input class="form-control" ng-model="record.time" />
+		</div>
+		
+		<div class="form-group">
+			<label>Duration</label>
+			<input class="form-control" ng-model="record.duration"/>
+		</div>
+		
+		<div class="form-group">
+			<label>Intensity</label>
+			<input class="form-control" ng-model="record.intensity"/>
+		</div>
+		
+		<!-- Omogućiti promenu prikazanih, vezanih korisnika i aktivnosti -->
+		
+		<div class="form-group">
+			<label for="ractivity">Activity</label>
+			<select class="form-control" id="ractivity" ng-model="record.activityId">
+				<option ng-repeat="a in activities" ng-selected="a.id == record.activityId" value="{{a.id}}">{{a.name}}</option>
+			</select>
+		</div>
+		
+		<div class="form-group">
+			<label for="ruser">User</label>
+			<select class="form-control" id="ruser" ng-model="record.userId">
+				<option ng-repeat="u in users" ng-selected="u.id == record.userId" value="{{u.id}}">{{u.firstname}}</option>
+			</select>
+		</div>
+		
+		
+		<button class="btn btn-secondary" ng-click="doEdit()">Edit</button>
+	</form>
+
+</div>
